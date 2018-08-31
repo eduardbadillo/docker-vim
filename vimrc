@@ -15,6 +15,7 @@
 
 colorscheme desert
 syntax on
+filetype plugin on
 set backspace=2
 set expandtab
 set tabstop=2
@@ -27,7 +28,7 @@ set updatetime=250
 set timeoutlen=1000
 set ttimeoutlen=10
 set laststatus=2                        " Show the status line
-set smartindent                         " Smart identation"
+set smartindent                         " Smart identation
 
 :command! WQ wq
 :command! Wq wq
@@ -38,9 +39,6 @@ set smartindent                         " Smart identation"
 map <C-a> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
@@ -63,6 +61,19 @@ let g:airline_theme='badwolf'
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
+
+" powerline symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
 
 " Split stuff
 nnoremap <C-j> <C-W><C-J>
